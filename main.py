@@ -20,7 +20,8 @@ def main_menu():
     """Main menu loop. Holds the system state and routes to every action."""
     # System state -- kept in memory only (no files)
     bank = []       # list of question dictionaries
-    results = []    # list of result dictionaries: {"player": str, "score": int}
+    # list of result dictionaries: {"player": str, "score": int}
+    results = []
 
     while True:
         print("\n===== Quiz System =====")
@@ -42,6 +43,9 @@ def main_menu():
         # ------------------------------------------------------------------
         # TODO Engine team: connect run_quiz here (option 4)
         # ------------------------------------------------------------------
+        if choice == "4":
+            player = input("Enter player name: ")
+            answers = run_quiz(bank, player)
 
         # ------------------------------------------------------------------
         # TODO Scoring team: connect calculate_score / save_result here

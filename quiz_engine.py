@@ -20,7 +20,11 @@ def check_answer(question, answer_index):
     Note: if the answer is wrong, increase question["wrong_count"] by 1
     (this is what lets the Results team find the hardest question).
     """
-    pass  # TODO Engine team
+    if answer_index == question["correct_index"]:
+        return True
+    else:
+        question["wrong_count"] += 1
+        return False
 
 
 def run_quiz(bank, player):
@@ -38,4 +42,22 @@ def run_quiz(bank, player):
     Hint: loop over bank, print question["text"] and the options, read the
     player's choice, and append the result of check_answer to the results list.
     """
-    pass  # TODO Engine team
+    print(f"Quiz for {player}")
+
+    results = []
+
+    for question in bank:
+        print(question["text"])
+
+        index = 0
+
+        for option in question["options"]:
+            print(f"{index}) {option}")
+            index += 1
+
+        answer_index = int(input("Choose an answer: "))
+
+        result = check_answer(question, answer_index)
+        results.append(result)
+
+    return results
