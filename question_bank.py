@@ -23,6 +23,19 @@ The question bank = a list of such dictionaries.
 
 
 def add_question(bank, text, options, correct_index, qtype="multi"):
+    new_question={}
+    id=len(bank+1)
+    wrong_count=0
+    new_question["id"]=id
+    new_question["text"]=text
+    new_question["options"]=[options]
+    new_question["correct index"]=correct_index
+    new_question["wrong_count"]=wrong_count
+    new_question["type"]=qtype
+
+    bank.append(new_question)
+    return bank
+
     """
     Add a new question to the bank.
 
@@ -37,7 +50,9 @@ def add_question(bank, text, options, correct_index, qtype="multi"):
     wrong_count to 0.
     Returns: the question dictionary that was created.
     """
-    pass  # TODO Question Bank team
+ 
+
+
 
 
 def list_questions(bank):
@@ -50,6 +65,11 @@ def list_questions(bank):
 
 
 def remove_question(bank, qid):
+    for question in bank:
+            if question
+
+
+
     """
     Remove the question whose id equals qid from the bank.
 

@@ -11,6 +11,7 @@ opportunity to practice resolving a conflict by hand. Don't panic.
 """
 
 from question_bank import add_question, list_questions, remove_question
+from sample_data import get_sample_bank
 from quiz_engine import run_quiz
 from scoring import calculate_score, save_result
 from results import show_leaderboard, find_hardest_question, player_statistics
@@ -37,6 +38,13 @@ def main_menu():
         # ------------------------------------------------------------------
         # TODO Question Bank team: connect add_question / list_questions /
         # remove_question here (options 1, 2, 3)
+        bank = get_sample_bank
+        if choice == 1:
+            textt = input("add a txt")
+            list_of_answ=[fgjh,jhdt]
+
+            bank = add_question()
+        
         # ------------------------------------------------------------------
 
         # ------------------------------------------------------------------
