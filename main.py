@@ -45,7 +45,7 @@ def main_menu():
         # ------------------------------------------------------------------
         if choice == "4":
             player = input("Enter player name: ")
-            answers = run_quiz(bank, player)
+            answers = run_quiz(bank, player) #[True,True,False,True,False,False]
 
         # ------------------------------------------------------------------
         # TODO Scoring team: connect calculate_score / save_result here
