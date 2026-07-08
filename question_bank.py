@@ -46,7 +46,14 @@ def list_questions(bank):
     Useful for management and editing. If the bank is empty, print a
     suitable message.
     """
-    pass  # TODO Question Bank team
+def list_questions(bank):
+    if len(bank) ==0:
+        print("no questions at the bank")
+    else:
+        for questions in bank:
+            print(questions)
+            print(len(questions["options"]))
+    
 
 
 def remove_question(bank, qid):
