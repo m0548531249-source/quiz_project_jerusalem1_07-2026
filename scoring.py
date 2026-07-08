@@ -21,7 +21,12 @@ def calculate_score(answers):
     Required: count manually! Start a counter at 0, loop over the list,
     and add 1 for every True. Do not use sum.
     """
-    pass  # TODO Scoring team
+    total = 0
+    for answer in answers:
+        if answer == True:
+            total  += 1
+    return total
+
 
 
 def save_result(results, player, score):
@@ -35,4 +40,5 @@ def save_result(results, player, score):
 
     Appends to results a dictionary of the form: {"player": player, "score": score}.
     """
-    pass  # TODO Scoring team
+    dicts = {player: score}
+    results.append(dicts)
