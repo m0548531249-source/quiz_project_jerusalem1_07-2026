@@ -81,26 +81,32 @@ def add_question_to_bank(bank):
     list_of_answ = []
     text = input("enter the text :")
     type = input("is the kind of question bool (tf/muilti)?:")
+    number_of_questions(list_of_answ , type)
+    correct_index = One_answer(list_of_answ)
+    
+    bank = add_question(bank, text, list_of_answ, correct_index, type)
+
+
+def number_of_questions(Answers , type):
     if (type != "tf"):
         while True:
             questions = input("enter the answer :")
-            list_of_answ.append(questions)
-            more = input("are you done? (y/n) :")
+            Answers.append(questions)
+            more = input("are you done? (yes/no) :")
             if(more == "yes"):
                 break
     else:
-        list_of_answ.append("True")
-        list_of_answ.append("False")
+        Answers.append("True")
+        Answers.append("False")
     
+def One_answer(Answers):
     while True:
         correct_index = int(input("what iz the correct_index ? :"))
-        if(correct_index < 0 or correct_index >= len(list_of_answ)):
+        if(correct_index < 0 or correct_index >= len(Answers)):
             print("the index is err ")
         else:
-            break 
-
-    bank = add_question(bank, text, list_of_answ, correct_index, type)
-
+             break
+    return correct_index
 
 def print_bank(bank):
     for x in bank:
@@ -109,6 +115,7 @@ def print_bank(bank):
         for v in x["options"]:
             sum += 1
             print(" ",sum ,".",v,end= "\n")
+
 
 def delete_question(bank):
     vv = int(input("הזיא הלאש התא הצור קוחמל ? :"))
@@ -122,7 +129,7 @@ def delete_question(bank):
             
     if(lch_fand == False):
         print("שגיאה")
-    
+ 
 
 if __name__ == "__main__":
     main_menu()
@@ -131,4 +138,3 @@ if __name__ == "__main__":
 
 
 
-    
