@@ -26,9 +26,11 @@ def main_menu():
 
     while True:
         print("\n===== Quiz System =====")
-        print("1. Add question")
-        print("2. List questions")
-        print("3. Remove question")
+
+        print("1. Add question")#הוספת שאלה
+        print("2. List questions")#רשימת שאלות
+        print("3. Remove question")#מחיקת שאלה
+
         print("4. Run quiz")
         print("5. Leaderboard")
         print("6. Hardest question")
@@ -39,12 +41,16 @@ def main_menu():
         # ------------------------------------------------------------------
         # TODO Question Bank team: connect add_question / list_questions /
         # remove_question here (options 1, 2, 3)
-        bank = get_sample_bank
-        if choice == 1:
-            textt = input("add a txt")
-            list_of_answ=[fgjh,jhdt]
+        #bank = get_sample_bank()
+        if choice == '1':
+            add_question_to_bank(bank)
 
-            bank = add_question()
+        elif(choice == '2'):
+            print_bank(bank)
+
+        elif(choice == '3'):
+            delete_question(bank)
+  
         
         # ------------------------------------------------------------------
 
@@ -70,5 +76,59 @@ def main_menu():
             break
 
 
+def add_question_to_bank(bank):
+
+    list_of_answ = []
+    text = input("enter the text :")
+    type = input("is the kind of question bool (tf/muilti)?:")
+    if (type != "tf"):
+        while True:
+            questions = input("enter the answer :")
+            list_of_answ.append(questions)
+            more = input("are you done? (y/n) :")
+            if(more == "yes"):
+                break
+    else:
+        list_of_answ.append("True")
+        list_of_answ.append("False")
+    
+    while True:
+        correct_index = int(input("what iz the correct_index ? :"))
+        if(correct_index < 0 or correct_index >= len(list_of_answ)):
+            print("the index is err ")
+        else:
+            break 
+
+    bank = add_question(bank, text, list_of_answ, correct_index, type)
+
+
+def print_bank(bank):
+    for x in bank:
+        print(x["id"],":",x["text"])
+        sum = 0
+        for v in x["options"]:
+            sum += 1
+            print(" ",sum ,".",v,end= "\n")
+
+def delete_question(bank):
+    vv = int(input("הזיא הלאש התא הצור קוחמל ? :"))
+    lch_fand = False
+    for s in bank: 
+        if s ["id"] == vv:
+            lch_fand = True
+            bank.remove(s)
+            print("הצלחת!")   
+            break
+            
+    if(lch_fand == False):
+        print("שגיאה")
+    
+
 if __name__ == "__main__":
     main_menu()
+
+
+
+
+
+    

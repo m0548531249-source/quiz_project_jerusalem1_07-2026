@@ -22,19 +22,27 @@ The question bank = a list of such dictionaries.
 """
 
 
-def add_question(bank, text, options, correct_index, qtype="multi"):
-    new_question={}
-    id=len(bank+1)
-    wrong_count=0
-    new_question["id"]=id
-    new_question["text"]=text
-    new_question["options"]=[options]
-    new_question["correct index"]=correct_index
-    new_question["wrong_count"]=wrong_count
-    new_question["type"]=qtype
+def add_question(bank, text, options, correct_index, qtype="multi"):#?
+    new_question={}# מגדיר מילון ריק
 
-    bank.append(new_question)
-    return bank
+    id=len(bank)+1# מוסיך ל iD את האורך של bank  (אבל ה bank ריק ?!)
+
+    wrong_count=0 # מגדיר סוג של מאגר ששווה ל 0
+
+    new_question["id"]=id  # מוסיף למילון את המפתח שהוא "id" שערך שלו שווה ל id
+
+    new_question["text"]=text # מוסיף למילון את המפתח שהוא "text" שערך שלו שווה ל text
+
+    new_question["options"]=options # מוסיף למילון את המפתח שהוא "options" שערך שלו שווה ל options
+
+    new_question["correct index"]=correct_index # מוסיף למילון את המפתח שהוא "icorrect indexd" שערך שלו שווה ל correct index
+
+    new_question["wrong_count"]=wrong_count # מוסיף למילון את המפתח שהוא "wrong_count" שערך שלו שווה ל wrong_count
+
+    new_question["type"]=qtype # מוסיף למילון את המפתח שהוא "type" שערך שלו שווה ל type
+
+    bank.append(new_question)# מוסיך לרשימה את המילון
+    return bank # מגדיר למה אני רוצה לקרוא
 
     """
     Add a new question to the bank.
@@ -72,8 +80,8 @@ def list_questions(bank):
 
 
 def remove_question(bank, qid):
-    for question in bank:
-            if question
+    # for question in bank:
+    #         if question:
 
 
 
